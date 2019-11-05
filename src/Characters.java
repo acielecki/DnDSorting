@@ -45,63 +45,25 @@ public int getChar() {
 public void setName(String nameLine) {
 	this.name = nameLine;
 }
-//Setters for character stats check to see if stat is single or double digit number
-//and set the stat to the number after the text
-
 //set strength
 public void setStr(String strLine) {
-	String num = "";
-	if(strLine.length() == 10) {
-		num += strLine.charAt(9);
-	}
-	else {
-		num += "" + strLine.charAt(9) + strLine.charAt(10);
-	}
-	this.strength = Integer.parseInt(num);
+	this.strength = Integer.parseInt(strLine.replaceAll("[^0-9]", ""));
 }
 //set dexterity
 public void setDex(String dexLine) {
-	String num = "";
-	if(dexLine.length() == 11) {
-		num += dexLine.charAt(10);
-	}
-	else {
-		num += "" + dexLine.charAt(10) + dexLine.charAt(11);
-	}
-	this.dexterity = Integer.parseInt(num);
+	this.dexterity = Integer.parseInt(dexLine.replaceAll("[^0-9]", ""));
 }
 //set constitution
 public void setCon(String conLine) {
-	String num = "";
-	if(conLine.length() == 14) {
-		num += conLine.charAt(13);
-	}
-	else {
-		num += "" + conLine.charAt(13) + conLine.charAt(14);
-	}
-	this.constitution = Integer.parseInt(num);
+	this.constitution = Integer.parseInt(conLine.replaceAll("[^0-9]", ""));
 }
 //set intelligence
 public void setInt(String intLine) {
-	String num = "";
-	if(intLine.length() == 14) {
-		num += intLine.charAt(13);
-	}
-	else {
-		num += "" + intLine.charAt(13) + intLine.charAt(14);
-	}
-	this.intelligence = Integer.parseInt(num);
+	this.intelligence = Integer.parseInt(intLine.replaceAll("[^0-9]", ""));
 }
 //set wisdom
 public void setWis(String wisLine) {
-	String num = "";
-	if(wisLine.length() == 8) {
-		num += wisLine.charAt(7);
-	}
-	else {
-		num += "" + wisLine.charAt(7) + wisLine.charAt(8);
-	}
-	this.wisdom = Integer.parseInt(num);
+	this.wisdom = Integer.parseInt(wisLine.replaceAll("[^0-9]", ""));;
 }
 //set charisma
 public void setChar(String charLine) {
