@@ -63,20 +63,12 @@ public void setInt(String intLine) {
 }
 //set wisdom
 public void setWis(String wisLine) {
-	this.wisdom = Integer.parseInt(wisLine.replaceAll("[^0-9]", ""));;
+	this.wisdom = Integer.parseInt(wisLine.replaceAll("[^0-9]", ""));
 }
 //set charisma
 public void setChar(String charLine) {
-	String num = "";
-	if(charLine.length() == 10) {
-		num += charLine.charAt(9);
-	}
-	else {
-		num += "" + charLine.charAt(9) + charLine.charAt(10);
-	}
-	this.charisma = Integer.parseInt(num);
+	this.wisdom = Integer.parseInt(charLine.replaceAll("[^0-9]", ""));
 }
-//Print formatted Character info
 public String toString() {
 	return this.name + "\nStr: " + this.strength + "\nDex: " + this.dexterity + "\nCon: " + this.constitution
 			+ "\nInt: " + this.intelligence + "\nWis: " + this.wisdom + "\nChar: " + this.charisma + "\n";
